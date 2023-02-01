@@ -4,7 +4,7 @@ import ariane from "./ariane.png";
 
 const App = () => {
   const blue = "#60A5FA";
-  const white = "white";
+  const white = "#ffffff";
   const red = "#F87171";
   const green = "#4ADE80";
   const orange = "#efc976";
@@ -149,7 +149,7 @@ const App = () => {
       </div>
 
       <div>
-        {switch1 === true && switch2 === true && switch3 === true ? (
+        {switch1 && switch2 && switch3 ? (
           <div
             className="m-auto flex h-32 w-44 justify-center rounded-md"
             style={{ backgroundColor: green }}
