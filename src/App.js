@@ -2,25 +2,40 @@ import Button from "./components/Button";
 import { useState } from "react";
 
 const App = () => {
-  const [backgroundColor, setBackgroundColor] = useState("#60A5FA");
+  const blue = "#60A5FA";
+  const white = "white";
+
+  const [switch1, setSwitch1] = useState(false);
 
   return (
     <div className="App">
       <div>
-        <div>
-          <button className="m-4 rounded-md border border-blue-400 py-3 px-4 text-blue-400">
-            ON
-          </button>
-          {/*<button*/}
-          {/*  className="m-4 rounded-md border border-blue-400 py-3 px-4"*/}
-          {/*  style={{ backgroundColor: "#60A5FA", color: "white" }}*/}
-          {/*>*/}
-          {/*  OFF*/}
-          {/*</button>*/}
-          <Button text="OFF" backGround={backgroundColor} textColor="white" />
-        </div>
+        {switch1 ? (
+          <div className="flex">
+            <Button
+              onClick={() => {
+                setSwitch1(false);
+              }}
+              text="On"
+              backGround={blue}
+              textColor={white}
+            />
+            <Button text="OFF" backGround={white} textColor={blue} />
+          </div>
+        ) : (
+          <div className="flex">
+            <Button
+              onClick={() => {
+                setSwitch1(true);
+              }}
+              text="On"
+              backGround={white}
+              textColor={blue}
+            />
+            <Button text="OFF" backGround={blue} textColor={white} />
+          </div>
+        )}
       </div>
-      <div></div>
     </div>
   );
 };
