@@ -149,13 +149,18 @@ const App = () => {
       </div>
 
       <div>
-        {" "}
         {switch1 === true && switch2 === true && switch3 === true ? (
           <div
             className="m-auto flex h-32 w-44 justify-center rounded-md"
             style={{ backgroundColor: green }}
           >
-            <button>LANCH !</button>
+            <button
+              onClick={() => {
+                alert("La fusée a décollé ! Bravo !");
+              }}
+            >
+              LAUNCH !
+            </button>
           </div>
         ) : (
           <div
